@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "eichenhain",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server.js"],
+      "port": 8080
+    }
+  ]
+}

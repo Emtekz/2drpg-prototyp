@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1c2a1a">
+  <title>Eichenhain – RPG-Prototyp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div id="hud-zone"></div>
+    <div class="bar hp"><div class="fill" id="hud-hp-fill"></div><span id="hud-hp-text"></span></div>
+    <div class="bar mp"><div class="fill" id="hud-mp-fill"></div><span id="hud-mp-text"></span></div>
+    <div id="hud-info"><span id="hud-level"></span> · <span id="hud-gold"></span></div>
+  </div>
+  <button id="btn-menu" aria-label="Menü">☰</button>
+  <div id="toasts"></div>
+
+  <!-- Touch-Steuerung -->
+  <div id="touch">
+    <div id="dpad">
+      <button data-dir="up" class="u">▲</button>
+      <button data-dir="left" class="l">◀</button>
+      <button data-dir="right" class="r">▶</button>
+      <button data-dir="down" class="d">▼</button>
+    </div>
+    <button id="btn-a">A</button>
+  </div>
+
+  <!-- Dialog -->
+  <div id="dialog" class="hidden">
+    <div id="dialog-name"></div>
+    <div id="dialog-text"></div>
+    <div class="hint">▼</div>
+  </div>
+
+  <!-- Menü / Shop -->
+  <div id="panel" class="hidden">
+    <div class="box">
+      <div class="head">
+        <div id="panel-tabs"></div>
+        <button id="panel-close" aria-label="Schließen">✕</button>
+      </div>
+      <div id="panel-body"></div>
+    </div>
+  </div>
+
+  <!-- Kampf -->
+  <div id="battle" class="hidden">
+    <div id="enemy-area">
+      <div id="enemy-box" class="card">
+        <div class="name-row"><span id="enemy-name"></span><span id="enemy-status"></span></div>
+        <div class="bar hp"><div class="fill" id="enemy-hp-fill"></div><span id="enemy-hp-text"></span></div>
+      </div>
+      <div id="enemy-sprite"></div>
+    </div>
+    <div id="player-box" class="card">
+      <div class="name-row"><span>🧙 Held · Lv <span id="b-level"></span></span><span id="player-status"></span></div>
+      <div class="bar hp"><div class="fill" id="b-hp-fill"></div><span id="b-hp-text"></span></div>
+      <div class="bar mp"><div class="fill" id="b-mp-fill"></div><span id="b-mp-text"></span></div>
+    </div>
+    <div id="battle-log" class="card"></div>
+    <div id="battle-actions"></div>
+  </div>
+
+  <div id="fade"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/battle.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
